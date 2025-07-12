@@ -37,6 +37,9 @@ export const updateHotel = async (req, res, next) => {
 //delete
 export const deleteHotel = async (req, res) => {
   const hotelId = req.params.id;
+  const isHotelexists = await Hotel.findById(hotelId);
+  if (!isHotelexists)
+    return res.status(404).json({ message: "Hotel not found" });
 
   try {
     await Hotel.findByIdAndDelete(hotelId);

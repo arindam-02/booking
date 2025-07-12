@@ -1,4 +1,5 @@
 import User from "../models/User.js";
+import { createError } from "../utils/error.js";
 
 //update
 export const updateUser = async (req, res, next) => {
@@ -16,7 +17,9 @@ export const updateUser = async (req, res, next) => {
 
 //delete
 export const deleteUser = async (req, res, next) => {
-  return res.json(req.params.id);
+  if (req.params.id !== req.user.id) {
+    return next(createError(403, "You can delete opnly your account!"));
+  }
   try {
     await User.findByIdAndDelete(req.params.id);
     res.status(200).json("User has been deleted.");

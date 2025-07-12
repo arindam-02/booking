@@ -8,8 +8,7 @@ const app = express();
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
-// const URI = process.env.MONGO_URI || "mongodb://localhost:27017/";
-const URI = "mongodb://localhost:27017/booking";
+const URI = process.env.MONGODB_URI + process.env.MONGODB_DB;
 
 /* ---------------- Middlewares ---------------- */
 app.use(cookieParser());

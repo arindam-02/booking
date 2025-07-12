@@ -57,10 +57,10 @@ router.get("/hotels/", getHotels);
 router.get("/hotels/details/:id", getHotelsByid);
 
 //room apis
-router.post("/rooms/create", verifyAdmin, createRoom);
-router.post("/rooms/edit/:id", verifyAdmin, updateRoom);
-router.post("/rooms/delete/:id", verifyAdmin, deleteRoom);
-router.post("/rooms/", getRooms);
-router.post("/rooms/details/:id", getRoomByid);
+router.post("/rooms/create/:hotelId", verifyAdmin, createRoom);
+router.put("/rooms/edit/:id", verifyAdmin, updateRoom);
+router.delete("/rooms/delete/:id/:hotelId", verifyAdmin, deleteRoom);
+router.get("/rooms/", getRooms);
+router.get("/rooms/details/:id", getRoomByid);
 
 export default router;
