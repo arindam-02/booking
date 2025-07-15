@@ -1,0 +1,31 @@
+.navContainer {
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #003b95;
+}
+.navbar {
+  height: 50px;
+  background-color: #003b95;
+}
+
+.ghost-btn {
+  background-color: transparent;
+  /* border: 2px solid #ffffff; */
+
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.ghost-btn:hover {
+  background-color: #024bb8;
+  color: #ffffff;
+}
+.highlited-nav-link {
+  background-color: #003b95;
+}
+.highlited-nav-link:hover {
+  background-color: #024bb8;
+}
