@@ -8,7 +8,7 @@
 }
 .navbar {
   height: 50px;
-  background-color: #003b95;
+  /* background-color: #003b95; */
 }
 
 .ghost-btn {
@@ -24,7 +24,7 @@
   color: #ffffff;
 }
 .highlited-nav-link {
-  background-color: #003b95;
+  /* background-color: #003b95; */
 }
 .highlited-nav-link:hover {
   background-color: #024bb8;

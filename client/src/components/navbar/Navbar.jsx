@@ -6,15 +6,23 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { LiaBedSolid } from "react-icons/lia";
+import { PiAirplaneTakeoff } from "react-icons/pi";
+import { RiHotelLine } from "react-icons/ri";
+import { PiCar } from "react-icons/pi";
+import { PiVanBold } from "react-icons/pi";
+import { TbBuildingCarousel } from "react-icons/tb";
 import "./navbar.css";
+import TravelSearchBar from "../travelSearchban/TravelSearchBar";
+import Breadcrumbs from "../breadcrumbs/Breadcrumbs";
 
 const Navbar = () => {
   return (
     <div className="navContainer">
-      <div className=" flex flex-col items-center mx-auto py-4">
-        <div className="navbar w-8/12 flex justify-between items-center mx-auto py-4">
+      <div className=" flex flex-col items-center mx-auto py-1.5">
+        <div className="navbar w-[1050px] flex justify-between items-center mx-auto py-4">
           <div className="logo">
-            <h1 className="text-3xl">EasyHotels.com</h1>
+            <h1 className="text-3xl">Roomrader.com</h1>
           </div>
           <div className="navItems flex items-center gap-2">
             {/* select Currency */}
@@ -70,44 +78,56 @@ const Navbar = () => {
           </div>
         </div>
 
-        <nav className=" w-8/12 flex justify-start items-center gap-4 py-2 text-[16px] font-normal ">
+        <nav className="w-7/12 pl-12 flex justify-start items-center gap-1 py-2 text-[16px] font-normal ">
           <a
             href="/"
-            className="nav-link border-0  px-5 py-1.5 rounded-full highlited-nav-link"
+            className="nav-link border-0 px-3 py-1.5 rounded-full highlited-nav-link flex items-center"
           >
+            <LiaBedSolid className="me-2 text-2xl" />
             Stays
           </a>
           <a
             href="/flight"
-            className="nav-link border-0  px-5 py-1.5 rounded-full highlited-nav-link"
+            className="nav-link border-0 px-3 py-1.5 rounded-full highlited-nav-link flex items-center"
           >
+            <PiAirplaneTakeoff className="me-2 text-2xl" />
             Flight
           </a>
           <a
             href="https://booking-in.lastminute.com/"
-            className="nav-link border-0  px-5 py-1.5 rounded-full highlited-nav-link"
+            className="nav-link border-0 px-3 py-1.5 rounded-full highlited-nav-link flex items-center"
           >
+            <RiHotelLine className="me-2 text-2xl" />
             Flight + Hotel
           </a>
           <a
             href="/cars"
-            className="nav-link border-0  px-5 py-1.5 rounded-full highlited-nav-link"
+            className="nav-link border-0 px-3 py-1.5 rounded-full highlited-nav-link flex items-center"
           >
+            <PiCar className="me-2 text-2xl" />
             Car rental
           </a>
           <a
             href="/attractions"
-            className="nav-link border-0  px-5 py-1.5 rounded-full highlited-nav-link"
+            className="nav-link border-0 px-3 py-1.5 rounded-full highlited-nav-link flex items-center"
           >
-            Attractions
+            <TbBuildingCarousel className="me-2 text-2xl" />
+            Activites
           </a>
           <a
             href="/taxi"
-            className="nav-link border-0  px-5 py-1.5 rounded-full highlited-nav-link"
+            className="nav-link border-0 px-3 py-1.5 rounded-full highlited-nav-link flex items-center"
           >
+            <PiVanBold className="me-2 text-2xl" />
             Airport taaxies
           </a>
         </nav>
+      </div>
+      <div className="flex justify-center ">
+        <div className="w-[1050px] flex flex-col  justify-center">
+          <TravelSearchBar />
+          <Breadcrumbs />
+        </div>
       </div>
     </div>
   );

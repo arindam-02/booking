@@ -7,7 +7,12 @@ const Layout = ({ children }) => {
       <header className=" w-full">
         <Navbar />
       </header>
-      <main className="flex-grow w-full">{children}</main>
+      <div className="flex justify-center">
+        <div className="w-[1050px] flex flex-col  justify-center">
+          <main className="flex-grow w-full pt-20">{children}</main>
+        </div>
+      </div>
+
       <footer className="w-full text-center py-4">
         <p>&copy; {new Date().getFullYear()} My Booking App</p>
       </footer>
