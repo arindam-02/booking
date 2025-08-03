@@ -64,9 +64,9 @@ const TravelSearchBar = () => {
       guests,
     });
     // Implement your search logic here
-    // alert(
-    //   `Searching for ${location} from ${formatDateRange()} for ${formatGuestText()}`
-    // );
+    alert(
+      `Searching for ${location} from ${formatDateRange()} for ${formatGuestText()}`
+    );
   };
 
   return (
@@ -202,19 +202,40 @@ const TravelSearchBar = () => {
 
                 {guests.children > 0 ? (
                   <div className="space-y-4 mb-2 text-xs">
+                    {/* <div className="w-full ">
+                        for(i=0;i<=4;i++){
+                        <select
+                          name="childAge[]"
+                          id="childAge"
+                          className="border-2 py-1 px-3 border-red-700"
+                        >
+                          <option value="">Age Needed</option>
+                          {age.map((item, index) => (
+                            <option value={item} key={index}>
+                              {item} years old
+                            </option>
+                          ))}
+                        </select>
+                          }
+                      </div> */}
                     <div className="w-full ">
-                      <select
-                        name="childAge[]"
-                        id="childAge"
-                        className="border-2 py-1 px-3 border-red-700"
-                      >
-                        <option value="">Age Needed</option>
-                        {age.map((item, index) => (
-                          <option value={item} key={index}>
-                            {item} years old
-                          </option>
-                        ))}
-                      </select>
+                      {Array.from({ length: guests.children }).map(
+                        (item, index) => (
+                          <select
+                            key={index}
+                            name="childAge[]"
+                            id={`childAge-${index}`}
+                            className="border-2 py-1 px-3 border-red-700 m-3"
+                          >
+                            <option value="">Age Needed</option>
+                            {age.map((item, index) => (
+                              <option value={item} key={index}>
+                                {item} years old
+                              </option>
+                            ))}
+                          </select>
+                        )
+                      )}
                     </div>
                     <p>
                       To find you a place to stay that fits your entire group
@@ -226,6 +247,37 @@ const TravelSearchBar = () => {
                   ""
                 )}
 
+                {/* ============ */}
+                {/* {guests.children > 0 && (
+                  <div className="space-y-4 mb-2 text-xs">
+                    {[...Array(guests.children)].map((_, index) => (
+                      <div className="w-full" key={index}>
+                        <label htmlFor={`childAge-${index}`}>
+                          Child {index + 1} Age
+                        </label>
+                        <select
+                          name={`childAge[${index}]`}
+                          id={`childAge-${index}`}
+                          className="border-2 py-1 px-3 border-red-700 w-full"
+                        >
+                          <option value="">Age Needed</option>
+                          {age.map((item, i) => (
+                            <option value={item} key={i}>
+                              {item} years old
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    ))}
+                    <p>
+                      To find you a place to stay that fits your entire group
+                      along with correct prices, we need to know how old your
+                      child will be at check-out
+                    </p>
+                  </div>
+                )} */}
+
+                {/* ============ */}
                 {/* rooms */}
                 <div className="space-y-4 mb-2">
                   <div className="flex items-center justify-between">
